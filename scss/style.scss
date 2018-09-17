@@ -1,0 +1,142 @@
+body {
+	margin: 0;
+	font-family: 'Ubuntu Mono', monospace;
+	background-color: #1d2644;
+}
+
+a {
+	transition: .3s;
+}
+
+.fly {
+	position: fixed;
+	font-size: 1.5rem;
+	color: #f5a82c;
+	z-index: 10;
+	background-color: #1d2644;
+	padding: .1rem;
+	a {
+		color: #f5a82c;
+		&:hover {
+			color: #cd3313;
+		}
+	}
+	&#logo {
+		font-weight: bold;
+		top: 1rem;
+		left: 1rem;
+	}
+	&#blog {
+		top: 1rem;
+		right: 1rem;
+	}
+	&#twitter {
+		bottom: 1rem;
+		right: 1rem;
+	}
+	&#temp {
+		bottom: 1rem;
+		left: 1rem;
+		font-size: 1.1rem;
+	}
+}
+
+#logoGif {
+	position: fixed;
+	top: 3rem;
+	left: 7rem;
+	display: none;
+	z-index: 10;
+}
+
+#tempGif {
+	position: fixed;
+	bottom: 2.5rem;
+	left: 7rem;
+	display: none;
+	z-index: 10;
+}
+
+.pinContainer {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+.noBg {
+	background-color: transparent !important;
+}
+
+.panel {
+	> div {
+		display: none;
+	}
+	min-height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+	h1 {
+		font-size: 3.5rem;
+		margin: 0 0 2rem;
+	}
+	p {
+		margin: 1.5rem 0;
+	}
+	&.home {
+		background-color: #1d2644;
+		color: #f5a82c;
+		a {
+			color: #f5a82c;
+			&:hover {
+				color: #cd3313;
+			}
+		}
+	}
+	&.games {
+		background-color: #647936;
+		color: #1d2644;
+		small {
+			font-size: 1.3rem;
+		}
+		.row {
+			display: flex;
+			.col {
+				text-align: center;
+				flex: 1;
+				width: 20rem;
+				h2 {
+					font-size: 2rem;
+					margin-bottom: 0;
+				}
+				.date {
+					margin-top: .2em;
+				}
+				a {
+					color: #1d2644;
+					&:hover {
+						color: #f5a82c;
+					}
+				}
+			}
+		}
+	}
+	&.about {
+		background-color: #870c1c;
+		color: #f5a82c;
+		a {
+			margin: 0 .3rem;
+			color: #f5a82c;
+			&:hover {
+				color: #647936;
+			}
+		}
+	}
+}
