@@ -1,105 +1,109 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="UTF-8")
-		title Demo Land
-		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono")
-		link(rel="stylesheet" href="css/style.css")
-		<?php if ($_SERVER['SERVER_NAME'] !== 'localhost'): ?>
-		script(async src="https://www.googletagmanager.com/gtag/js?id=UA-109574299-1")
-		script
-			| window.dataLayer = window.dataLayer || [];
-			| function gtag(){dataLayer.push(arguments);}
-			| gtag('js', new Date());
-			| gtag('config', 'UA-109574299-1');
-		<?php else: ?>
-			<script>function gtag(){}</script>
-		<?php endif; ?>
-	body
+	meta(charset="UTF-8")
+	title Demo Land
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono")
+	link(rel="stylesheet" href="style.css")
 
-		#logo.fly(
-			onmouseover="showGif('logoGif', 'https://media.giphy.com/media/sPuDbEFCsoN32/giphy.gif')"
-			onmouseout="hideGif('logoGif')"
-		) Demo Land
-		img#logoGif
-		#blog.fly
-			a(href="blog" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Fly', 'event_action': 'Blog'})") Blog
-		#twitter.fly
-			<a href="https://twitter.com/SubZtep?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" data-size="large" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Fly', 'event_action': 'Twitter'})">Follow @SubZtep</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		#temp.fly(
-			onmouseover="showGif('tempGif', 'https://media.giphy.com/media/9EWRVH2H98z6g/giphy.gif')"
-			onmouseout="hideGif('tempGif')"
-		) &#x26A0;Temporary page (with bugs) ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
-		img#tempGif
+	// @if NODE_ENV='production'
+	script(async src="https://www.googletagmanager.com/gtag/js?id=UA-109574299-1")
+	script.
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-109574299-1');
+	// @endif
 
-		.pinContainer
-				section.panel.home.noBg
-					div
-						#twitch-embed
-						p
-							| Place of my
-							|
-							a(href="https://ldjam.com/events/ludum-dare/40" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Home', 'event_action': 'Ludum Dare 40'})") Ludum Dare 40
-							|
-							| Twitch stream. Perhaps.
+	// @if NODE_ENV!='production'
+	script.
+		function gtag(){}
+	// @endif
 
-				section.panel.games.noBg
-					div
-						h1
-							| Games
-							small (preserve)
-						.row
-							.col
-								img(src="img/whilefly_icon.png")
-								h2 While Fly
-								p.date (2016)
-								p
-									a(href="https://demo.land/whilefly/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly'})") Page
-									br
-									a(href="https://subztep.itch.io/whilefly" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Itch.io'})") Itch.io
-									br
-									a(href="https://play.google.com/store/apps/details?id=land.demo.whilefly" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Google Play'})") Google Play
-									br
-									a(href="https://www.amazon.co.uk/Andras-Serfozo-While-Fly/dp/B01M010NWP/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Amazon Appstore'})") Amazon Appstore
-							.col
-								img(src="img/helptofindcats_icon.png")
-								h2 Help to Find Cats
-								p.date (2016)
-								p
-									a(href="https://devpost.com/software/help-to-find-cats" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Help to Find Cats Page'})") Page
-									br
-									a(href="https://play.google.com/store/apps/details?id=land.demo.cats" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Help to Find Cats Google Play'})") Google Play
-									br
-									a(href="https://www.amazon.co.uk/Andras-Serfozo-Help-Find-Cats/dp/B01F18KH4Y/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Help to Find Cats Amazon Appstore'})") Amazon Appstore
-							.col
-								img(src="img/basicpong_icon.png")
-								h2 Basic Pong
-								p.date (2015)
-								p
-									a(href="https://www.amazon.co.uk/Andras-Serfozo-Basic-Pong/dp/B01H2M5EK4/" target="_blank" onclick="ga('send', 'event', 'Games', 'Click', 'gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Basic Pong Amazon Appstore'})');") Amazon Appstore
 
-				section.panel.about.noBg
-					div
-						p
-							|Hello visitor, construction workzone,
-							br
-							|why don’t you choose a link of mine below?
-						img(src="img/under_construction.gif" alt="Under Construction")
-						p.links
-							a(href="https://json.city" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'JsonCity'})") #JsonCity
-							a(href="https://connect.unity.com/u/583ad92d32b306002a9e7ab2" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Unity Connect'})") #UnityConnect
-							a(href="https://twitter.com/subztep" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Twitter'})") #Twitter
-							a(href="https://www.instagram.com/subztep/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Instagram'})") #Instagram
-							br
-							a(href="https://plus.google.com/u/0/+AndrasSerfozo" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Google Plus'})") #GooglePlus
-							a(href="https://www.twitch.tv/subztep" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Twitch'})") #Twitch
-							a(href="https://www.last.fm/user/hybridoma" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Last.fm'})") #LastFm
-							a(href="https://subztep.itch.io/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Itch.io'})") #ItchIo
-							a(href="https://www.youtube.com/channel/UCy1JFooPXHose1GKoPZVxMg" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'YouTube'})") #YouTube
+	#logo.fly(
+		onmouseover="showGif('logoGif', 'https://media.giphy.com/media/sPuDbEFCsoN32/giphy.gif')"
+		onmouseout="hideGif('logoGif')"
+	) Demo Land
+	img#logoGif
+	#blog.fly
+		a(href="blog" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Fly', 'event_action': 'Blog'})") Blog
+	#twitter.fly
+		<a href="https://twitter.com/SubZtep?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" data-size="large" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Fly', 'event_action': 'Twitter'})">Follow @SubZtep</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	#temp.fly(
+		onmouseover="showGif('tempGif', 'https://media.giphy.com/media/9EWRVH2H98z6g/giphy.gif')"
+		onmouseout="hideGif('tempGif')"
+	) &#x26A0;Temporary page (with bugs) ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
+	img#tempGif
 
-		script(src="https://embed.twitch.tv/embed/v1.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js")
-		//-script(src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js")
-		script(src="js/main.js")
+	.pinContainer
+			section.panel.home.noBg
+				div
+					#twitch-embed
+					p
+						| Place of my
+						|
+						a(href="https://ldjam.com/events/ludum-dare/40" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Home', 'event_action': 'Ludum Dare 40'})") Ludum Dare 40
+						|
+						| Twitch stream. Perhaps.
+
+			section.panel.games.noBg
+				div
+					h1
+						| Games
+						small (preserve)
+					.row
+						.col
+							img(src="img/whilefly_icon.png")
+							h2 While Fly
+							p.date (2016)
+							p
+								a(href="https://demo.land/whilefly/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly'})") Page
+								br
+								a(href="https://subztep.itch.io/whilefly" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Itch.io'})") Itch.io
+								br
+								a(href="https://play.google.com/store/apps/details?id=land.demo.whilefly" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Google Play'})") Google Play
+								br
+								a(href="https://www.amazon.co.uk/Andras-Serfozo-While-Fly/dp/B01M010NWP/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Amazon Appstore'})") Amazon Appstore
+						.col
+							img(src="img/helptofindcats_icon.png")
+							h2 Help to Find Cats
+							p.date (2016)
+							p
+								a(href="https://devpost.com/software/help-to-find-cats" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Help to Find Cats Page'})") Page
+								br
+								a(href="https://play.google.com/store/apps/details?id=land.demo.cats" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Help to Find Cats Google Play'})") Google Play
+								br
+								a(href="https://www.amazon.co.uk/Andras-Serfozo-Help-Find-Cats/dp/B01F18KH4Y/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Help to Find Cats Amazon Appstore'})") Amazon Appstore
+						.col
+							img(src="img/basicpong_icon.png")
+							h2 Basic Pong
+							p.date (2015)
+							p
+								a(href="https://www.amazon.co.uk/Andras-Serfozo-Basic-Pong/dp/B01H2M5EK4/" target="_blank" onclick="ga('send', 'event', 'Games', 'Click', 'gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Basic Pong Amazon Appstore'})');") Amazon Appstore
+
+			section.panel.about.noBg
+				div
+					p
+						|Hello visitor, construction workzone,
+						br
+						|why don’t you choose a link of mine below?
+					img(src="img/under_construction.gif" alt="Under Construction")
+					p.links
+						a(href="https://json.city" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'JsonCity'})") #JsonCity
+						a(href="https://connect.unity.com/u/583ad92d32b306002a9e7ab2" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Unity Connect'})") #UnityConnect
+						a(href="https://twitter.com/subztep" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Twitter'})") #Twitter
+						a(href="https://www.instagram.com/subztep/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Instagram'})") #Instagram
+						br
+						a(href="https://plus.google.com/u/0/+AndrasSerfozo" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Google Plus'})") #GooglePlus
+						a(href="https://www.twitch.tv/subztep" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Twitch'})") #Twitch
+						a(href="https://www.last.fm/user/hybridoma" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Last.fm'})") #LastFm
+						a(href="https://subztep.itch.io/" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'Itch.io'})") #ItchIo
+						a(href="https://www.youtube.com/channel/UCy1JFooPXHose1GKoPZVxMg" target="_blank" onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'About', 'event_action': 'YouTube'})") #YouTube
+
+	script(src="https://embed.twitch.tv/embed/v1.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js")
+	//-script(src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js")
+	script(src="main.js")
