@@ -6,7 +6,6 @@ const
 	sass = require('gulp-sass'),
 	pug = require('gulp-pug'),
 	babel = require('gulp-babel'),
-	//rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'),
 	cssnano = require('gulp-cssnano'),
 	minify = require('gulp-babel-minify'),
@@ -18,11 +17,9 @@ gulp.task('html', () => {
 		.pipe(plumber())
 		.pipe(pug({
 			verbose: true,
-			pretty: !prod,
-			globals: [prod]
+			pretty: !prod
 		}))
 		.pipe(preprocess())
-		//.pipe(rename({extname: '.php'}))
 		.pipe(gulp.dest(destDir))
 })
 
@@ -35,10 +32,7 @@ gulp.task('css', () => {
 })
 
 gulp.task('js', () =>
-	gulp.src([
-		//'node_modules/babel-polyfill/dist/polyfill.js',
-		'js/main.js'
-	])
+	gulp.src('js/main.js')
 		.pipe(plumber())
 		.pipe(gulpif(prod, babel({
 			presets: [[
