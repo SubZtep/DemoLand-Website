@@ -3,12 +3,12 @@
     <div>
       <logo/>
       <h1 class="title">
-        DemoLand-Website
+        Rendered On The Server!
       </h1>
       <h2 class="subtitle">
-        My wondrous Nuxt.js project
+        Magic 🧙
       </h2>
-      <div class="links">
+      <!--div class="links">
         <a
           href="https://nuxtjs.org/"
           target="_blank"
@@ -17,7 +17,7 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
-      </div>
+      </div-->
     </div>
   </section>
 </template>
@@ -33,7 +33,6 @@ export default {
 </script>
 
 <style>
-
 .container {
   min-height: 100vh;
   display: flex;
