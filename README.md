@@ -1,10 +1,6 @@
-# DemoLand-Website
+# demo-land
 
-`package.json` add back: `"vantone": "file:../vantone"`
-also to `nuxt.config.js`
-
-
-> My wondrous Nuxt.js project
+> Demo.Land Website
 
 ## Build Setup
 

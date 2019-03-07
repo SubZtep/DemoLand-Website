@@ -1,55 +1,98 @@
-<template>
-  <div>
-    <nuxt/>
-  </div>
+<template lang="pug">
+div
+  #logo.fly(
+    onmouseover="showGif('logoGif')"
+    onmouseout="hideGif('logoGif')")
+    | Demo Land
+  img#logoGif
+
+  #blog.fly(
+    onmouseover="showGif('blogGif')"
+    onmouseout="hideGif('blogGif')")
+    a(href="/blog") Blog
+  img#blogGif
+
+  #twitter.fly
+    a.twitter-follow-button(
+      href="https://twitter.com/SubZtep?ref_src=twsrc%5Etfw"
+      data-show-count="false"
+      data-size="large")
+      | Follow @SubZtep</a>
+    script(
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8")
+
+  #temp.fly(
+    onmouseover="showGif('tempGif')"
+    onmouseout="hideGif('tempGif')")
+    | ⚠Temporary page (with bugs) ¦̵̱ ̵̱ ̵̱ ̵̱ ̵̱(̢ ̡͇̅└͇̅┘͇̅ (▤8כ−◦
+  img#tempGif
+
+  .panel
+    nuxt
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+export default {}
+</script>
+
+
+<style lang="scss">
+.fly {
+  text-shadow: -1px 0 3px #000, 0 1px 3px #000, 1px 0 3px #000, 0 -1px 3px #000;
+  position: fixed;
+  font-size: 1.5rem;
+  color: #f5a82c;
+  z-index: 10;
+  padding: 0.1rem;
+  a {
+    color: #f5a82c;
+    &:hover {
+      color: #cd3313;
+    }
+  }
+  &#logo {
+    font-weight: bold;
+    top: 1rem;
+    left: 1rem;
+  }
+  &#blog {
+    top: 1rem;
+    right: 1rem;
+  }
+  &#twitter {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  &#temp {
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 1.1rem;
+  }
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+#logoGif {
+  position: fixed;
+  top: 3rem;
+  left: 7rem;
+  display: none;
+  z-index: 10;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+#blogGif {
+  position: fixed;
+  top: 3rem;
+  right: 7rem;
+  display: none;
+  z-index: 10;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+#tempGif {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 7rem;
+  display: none;
+  z-index: 10;
 }
 </style>

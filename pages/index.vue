@@ -1,65 +1,71 @@
-<template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Rendered On The Server!
-      </h1>
-      <h2 class="subtitle">
-        Magic 🧙
-      </h2>
-      <!--div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div-->
-    </div>
-  </section>
+<template lang="pug">
+div(:class="$style.loading")
+  div
+    div
+      div
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
+  layout: "loading",
+  created() {
+    if (typeof window === "undefined") return
+
+    const assets = {
+      logoGif: "https://media.giphy.com/media/sPuDbEFCsoN32/giphy.gif",
+      blogGif: "https://media.giphy.com/media/3wDD0Khwova4o/giphy.gif",
+      tempGif: "https://media.giphy.com/media/9EWRVH2H98z6g/giphy.gif",
+      avatar: "https://s.gravatar.com/avatar/fa1e8161f961b4abd7cc7f61aa486021?s=120",
+      flyIcon: "/images/whilefly_icon.png",
+      catsIcon: "/images/helptofindcats_icon.png",
+      pongIcon: "/images/basicpong_icon.png",
+      ucGif: "/images/under_construction.gif"
+    }
+    const checkImage = path =>
+      new Promise(resolve => {
+        let img = new Image()
+        img.onload = () => resolve({ path, status: "ok" })
+        img.onerror = () => resolve({ path, status: "error" })
+        img.src = path
+      })
+    const loadImgs = (...paths) => Promise.all(paths.map(checkImage))
+    loadImgs(...Object.values(assets)).then(() => {
+      this.$router.push("/home")
+    })
   }
 }
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" module>
+@keyframes pulse {
+  0% {
+    border-color: #000;
+  }
+  50% {
+    border-color: #f5a82c;
+  }
+  100% {
+    border-color: #000;
+  }
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #008080;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(circle, #008080 20%, #000 40%);
+  z-index: 1000;
+  position: fixed;
+  div {
+    border: 40px dashed #000;
+    border-radius: 50%;
+    height: calc(100% - 65px);
+    animation: pulse 3s infinite;
+    opacity: 0.5;
+  }
 }
 </style>

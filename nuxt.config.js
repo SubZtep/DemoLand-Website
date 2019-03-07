@@ -1,7 +1,7 @@
-const pkg = require('./package')
+const pkg = require("./package")
 
 module.exports = {
-  mode: 'universal',
+  mode: "universal",
 
   /*
   ** Headers of the page
@@ -9,39 +9,39 @@ module.exports = {
   head: {
     title: pkg.name,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Ubuntu+Mono" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Schoolbell" }
     ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: "#fff" },
 
   /*
   ** Global CSS
   */
-  css: [
-  ],
+  css: ["./assets/css/main.scss"],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-    //'~plugins/vantone'
-  ],
+  plugins: [],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    // Doc: https://axios.nuxtjs.org/usage
+    "@nuxtjs/axios"
+    //"@nuxtjs/pwa"
   ],
   /*
   ** Axios module configuration
@@ -54,19 +54,25 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
+    splitChunks: {
+      layouts: true
+    },
+
+    loaders: {
+      cssModules: {
+        localIdentName: "[name]__[local]__[hash:base64:5]"
+      }
+    }
+    /* extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
           exclude: /(node_modules)/
         })
       }
-    }
+    } */
   }
 }
