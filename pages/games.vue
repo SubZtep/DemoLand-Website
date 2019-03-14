@@ -8,36 +8,30 @@
     !="(<em>Note: Write Descriptions</em> ⚙️ "
     a(
       href="https://wordpress.org/plugins/gif-animation-preview/"
-      onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'GIF Animation Preview'})"
       target="_blank") GIF Animation Preview
     =" 🎮 "
     a(
       href="https://ldjam.com/events/ludum-dare/40/the-hunger-maims"
-      onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'The Hunger Maims'})"
       target="_blank")
       | The Hunger Maims
     =" 🎮 "
     a(
       href="https://ldjam.com/events/ludum-dare/41/untitled-title"
-      onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Road Pump'})"
       target="_blank")
       | Road Pump
     =" ⚙️ "
     a(
       href="https://github.com/SubZtep/SQLiteManager"
-      onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'SQLiteManager'})"
       target="_blank")
       | SQLiteManager
     =" ⚙️ "
     a(
       href="https://json.city/"
-      onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Json City'})"
       target="_blank")
       | Json City
     =" 🎮 "
     a(
       href="http://2018.js13kgames.com/entries/whirled-on-the-spirit-spiral"
-      onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'Whirled on the Spirit Spiral'})"
       target="_blank")
       | Whirled on the Spirit Spiral
     =" etc…)"
@@ -50,13 +44,11 @@
       p
         a(
           href="https://demo.land/whilefly/"
-          onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly'})"
           target="_blank")
           | Page
         br
         a(
           href="https://subztep.itch.io/whilefly"
-          onclick="gtag('event', 'Temp Page Link Click', {'event_category': 'Games', 'event_action': 'While Fly Itch.io'})"
           target="_blank")
           | Itch.io
         br
@@ -107,7 +99,7 @@ export default {
     if (typeof window === "undefined") return
 
     setTimeout(() => {
-      this.$router.push("/about")
+      this.$router.replace("/about")
     }, this.$store.state.pageDelay)
   }
 }

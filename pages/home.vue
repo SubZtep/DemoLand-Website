@@ -28,7 +28,7 @@ export default {
     if (typeof window === "undefined") return
 
     setTimeout(() => {
-      this.$router.push("/games")
+      this.$router.replace("/games")
     }, this.$store.state.pageDelay)
   }
 }

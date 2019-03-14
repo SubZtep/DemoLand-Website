@@ -54,6 +54,8 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    transpile: ["prefetch-images"],
+
     splitChunks: {
       layouts: true
     },

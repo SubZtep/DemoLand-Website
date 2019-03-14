@@ -83,7 +83,7 @@ export default {
     if (typeof window === "undefined") return
 
     setTimeout(() => {
-      this.$router.push("/home")
+      this.$router.replace("/home")
     }, this.$store.state.pageDelay)
   }
 }

@@ -1,3 +1,3 @@
 export const state = () => ({
-  pageDelay: 666
+  pageDelay: 6669
 })
