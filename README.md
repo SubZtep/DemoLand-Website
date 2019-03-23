@@ -1,22 +1,11 @@
-# demo-land
+# **Web**_site_
 
-> Demo.Land Website
+> ### [demo.land](https://demo.land) :electric_plug:
 
-## Build Setup
+## Design
 
-``` bash
-# install dependencies
-$ yarn install
+I wish I can do that.
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
+### Link for ideas
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+- https://www.shutterstock.com/blog/neon-color-palettes
