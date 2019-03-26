@@ -1,5 +1,7 @@
 <template lang="pug">
-HelloWorld
+div
+  h1 Index
+  HelloWorld
 </template>
 
 <script lang="ts">
@@ -13,3 +15,6 @@ import HelloWorld from "~/components/HelloWorld.vue"
 })
 export default class Home extends Vue {}
 </script>
+
+<style lang="scss" module>
+</style>
