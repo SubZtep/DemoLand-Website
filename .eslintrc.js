@@ -6,6 +6,7 @@ module.exports = {
   },
   rules: {
     "no-constant-condition": ["warn", { checkLoops: false }],
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "no-console": "off"
   }
 }

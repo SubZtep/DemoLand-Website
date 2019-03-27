@@ -8,11 +8,12 @@ const config: NuxtConfiguration = {
     titleTemplate: "%s - demo.land",
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" }
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { rel: "favicon", href: "favicon.ico" }
     ]
   },
 
-  css: ["~/assets/styles/main.scss"],
+  css: ["~/assets/styles/tailwind.css"],
 
   router: {
     middleware: "pages"

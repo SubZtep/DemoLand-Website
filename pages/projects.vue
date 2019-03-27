@@ -1,14 +1,16 @@
 <template lang="pug">
 .container
-  h1 Index
+  h1 Projects
+  p Some random project
 </template>
 
 <script lang="ts">
 import Vue from "vue"
 
 export default Vue.extend({
+  transition: "slide-right",
   head: {
-    titleTemplate: "demo.land"
+    title: "Projects"
   }
 })
 </script>
