@@ -4,5 +4,5 @@ module.exports = {
   parserOptions: {
     parser: "@typescript-eslint/parser"
   },
-  extends: ["@nuxtjs"]
-};
+  extends: ["@nuxtjs", "plugin:prettier/recommended"]
+}

@@ -1,4 +1,5 @@
-import NuxtConfiguration from "@nuxt/config";
+// eslint-disable-next-line no-unused-vars
+import NuxtConfiguration from "@nuxt/config"
 
 const config: NuxtConfiguration = {
   mode: "universal",
@@ -55,6 +56,6 @@ const config: NuxtConfiguration = {
      */
     extend(config, ctx) {}
   }
-};
+}
 
-export default config;
+export default config
