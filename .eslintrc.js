@@ -1,12 +1,8 @@
 module.exports = {
-  extends: ["@nuxtjs", "prettier", "prettier/@typescript-eslint"],
+  root: true,
   plugins: ["@typescript-eslint"],
   parserOptions: {
     parser: "@typescript-eslint/parser"
   },
-  rules: {
-    "no-constant-condition": ["warn", { checkLoops: false }],
-    "no-unused-vars": "warn",
-    "no-console": "off"
-  }
-}
+  extends: ["@nuxtjs"]
+};

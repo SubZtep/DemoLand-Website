@@ -1,11 +1,22 @@
-# **Web**_site_
+# demoland
 
-> ### [demo.land](https://demo.land) :electric_plug:
+> My groundbreaking Nuxt.js project
 
-## Design
+## Build Setup
 
-I wish I can do that.
+``` bash
+# install dependencies
+$ yarn install
 
-### Link for ideas
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-- https://www.shutterstock.com/blog/neon-color-palettes
+# build for production and launch server
+$ yarn run build
+$ yarn start
+
+# generate static project
+$ yarn run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
