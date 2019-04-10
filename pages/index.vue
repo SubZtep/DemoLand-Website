@@ -7,10 +7,10 @@
 import { Component, mixins } from "nuxt-property-decorator"
 import Transition from "./transition"
 
-@Component
-export default class IndexPage extends mixins(Transition) {
+@Component({
   head: {
     titleTemplate: "demo.land"
   }
-}
+})
+export default class IndexPage extends mixins(Transition) {}
 </script>

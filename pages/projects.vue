@@ -8,10 +8,10 @@
 import { Component, mixins } from "nuxt-property-decorator"
 import Transition from "./transition"
 
-@Component
-export default class IndexPage extends mixins(Transition) {
+@Component({
   head: {
     title: "Projects"
   }
-}
+})
+export default class IndexPage extends mixins(Transition) {}
 </script>

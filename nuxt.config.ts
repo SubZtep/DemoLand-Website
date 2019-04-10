@@ -1,17 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import NuxtConfiguration from "@nuxt/config"
-const join = require("path").join
 
-const tailwindJS = join(__dirname, "tailwind.js")
+const tailwindcss = require("tailwindcss")
 
 const config: NuxtConfiguration = {
   mode: "universal",
 
-  /*
-   ** Headers of the page
-   */
   head: {
-    title: "demo.land",
+    titleTemplate: "%s - demo.land",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -20,42 +16,23 @@ const config: NuxtConfiguration = {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
   loading: { color: "#fff" },
 
-  /*
-   ** Global CSS
-   */
   css: ["~/assets/css/tailwind.css"],
 
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [],
 
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios",
-    "@nuxtjs/pwa"
-  ],
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+
+  axios: {},
+
+  router: {
+    middleware: "pages"
   },
 
-  /*
-   ** Build configuration
-   */
   build: {
     postcss: {
-      plugins: [require("tailwindcss")(tailwindJS), require("autoprefixer")]
+      plugins: [tailwindcss("./tailwind.config.js"), require("autoprefixer")]
     }
   }
 }

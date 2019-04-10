@@ -47,7 +47,7 @@
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "tailwindcss": "^0.7.0",
+    "tailwindcss": "^1.0.0-beta.4",
     "vue-jest": "^3.0.3"
   }
 }

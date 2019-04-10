@@ -2,7 +2,7 @@
 import { State } from "./state"
 
 export default {
-  setPage(state: State, page: string): void {
+  updatePage(state: State, page: string): void {
     state.page = page
   }
 }
