@@ -1,5 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import NuxtConfiguration from "@nuxt/config"
+const join = require("path").join
+
+const tailwindJS = join(__dirname, "tailwind.js")
 
 const config: NuxtConfiguration = {
   mode: "universal",
@@ -51,10 +54,9 @@ const config: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+    postcss: {
+      plugins: [require("tailwindcss")(tailwindJS), require("autoprefixer")]
+    }
   }
 }
 

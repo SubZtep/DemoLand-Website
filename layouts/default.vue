@@ -1,55 +1,75 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+div
+  AppNavigation
+  nuxt
 </template>
 
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script lang="ts">
+import { Vue, Component } from "nuxt-property-decorator"
+import AppNavigation from "~/components/AppNavigation.vue"
+
+@Component({
+  components: {
+    AppNavigation
+  }
+})
+export default class IndexPage extends Vue {
+  head: {
+    titleTemplate: "demo.land"
+  }
+}
+</script>
+
+<style lang="scss">
+/* $slideSpeed: 0.2s;
+.page-enter-active {
+  transition: all 0.5s ease;
+  transform: translateX(0);
+  //transition: opacity 0.25s ease-out;
+}
+.page-leave-active {
+  transition: all 0.5s ease;
+  transform: translateX(0);
+  //transition: opacity 0.25s ease-in;
+}
+.page-enter,
+.page-leave-active {
+  transition: all 0.5s ease;
+  transform: translateX(100%);
+} */
+
+.slide-left-leave {
+  transform: translateX(0);
+}
+.slide-left-leave-to {
+  transform: translateX(100%);
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+.slide-left-enter {
+  transform: translateX(-100%);
+}
+.slide-left-enter-to {
+  transform: translateX(0);
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.slide-right-leave {
+  transform: translateX(0);
+}
+.slide-right-leave-to {
+  transform: translateX(-100%);
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.slide-right-enter {
+  transform: translateX(100%);
+}
+.slide-right-enter-to {
+  transform: translateX(0);
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: transform 200ms ease-out;
 }
 </style>

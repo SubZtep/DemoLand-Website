@@ -1,6 +1,6 @@
 <template lang="pug">
 .container
-  h1 Index
+  h1 About
 </template>
 
 <script lang="ts">
@@ -10,7 +10,7 @@ import Transition from "./transition"
 @Component
 export default class IndexPage extends mixins(Transition) {
   head: {
-    titleTemplate: "demo.land"
+    title: "About"
   }
 }
 </script>
