@@ -1,5 +1,5 @@
 <template lang="pug">
-nav
+nav(:class="$style.nav")
   .text-center
     nuxt-link(to="/about") about
     =" - "
@@ -8,7 +8,7 @@ nav
     nuxt-link(to="/projects") projects
 
   svg(
-    :class="{ 'active' : (page === 'index') }"
+    :class="{ [$style.active]: (page === 'index') }"
     xmlns="http://www.w3.org/2000/svg"
     width="64"
     height="64"
@@ -18,8 +18,8 @@ nav
       name="list"
       tag="g")
 
-      rect.items.rect(ref="rect" x="32" y="32" key="rect" width="64" height="64")
-      circle.items.circle(key="circ" cx="64" cy="64" r="32")
+      rect(:class="[$style.items, $style.rect]" ref="rect" x="32" y="32" key="rect" width="64" height="64")
+      circle(:class="[$style.items, $style.circle]" key="circ" cx="64" cy="64" r="32")
 </template>
 
 <script lang="ts">
@@ -32,7 +32,17 @@ export default class AppNavigationComponent extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
+.nav {
+  position: absolute;
+  top: 0;
+  border: 2px solid yellow;
+  background-color: black;
+  margin: 0 auto;
+  z-index: 1000;
+  left: 45%;
+}
+
 .items {
   transition: all 1s ease;
 }

@@ -5,12 +5,12 @@
 
 <script lang="ts">
 import { Component, mixins } from "nuxt-property-decorator"
-import Transition from "./transition"
+import TransitionMixin from "~/mixins/transition"
 
 @Component({
   head: {
     title: "About"
   }
 })
-export default class IndexPage extends mixins(Transition) {}
+export default class IndexPage extends mixins(TransitionMixin) {}
 </script>

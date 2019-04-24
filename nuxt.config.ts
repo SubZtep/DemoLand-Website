@@ -1,8 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import NuxtConfiguration from "@nuxt/config"
 
-const tailwindcss = require("tailwindcss")
-
 const config: NuxtConfiguration = {
   mode: "universal",
 
@@ -18,7 +16,7 @@ const config: NuxtConfiguration = {
 
   loading: { color: "#fff" },
 
-  css: ["~/assets/css/tailwind.css"],
+  css: ["~/assets/css/tailwind.css", "~/assets/css/main.css", "~/assets/css/page-transitions.css"],
 
   plugins: [],
 
@@ -32,7 +30,12 @@ const config: NuxtConfiguration = {
 
   build: {
     postcss: {
-      plugins: [tailwindcss("./tailwind.config.js"), require("autoprefixer")]
+      plugins: [require("tailwindcss")("./tailwind.config.ts"), require("autoprefixer")]
+    },
+    loaders: {
+      cssModules: {
+        localIdentName: "[name]__[local]__[hash:base64:5]"
+      }
     }
   }
 }
