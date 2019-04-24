@@ -1,8 +1,7 @@
 <template lang="pug">
-.body
+.overflow-hidden
   AppNavigation
-  .overflow-hidden
-    nuxt
+  nuxt
 </template>
 
 <script lang="ts">

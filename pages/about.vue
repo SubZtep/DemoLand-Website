@@ -1,5 +1,5 @@
 <template lang="pug">
-.container
+.container.bg-gray-700
   h1 About
 </template>
 

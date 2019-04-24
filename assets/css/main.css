@@ -2,3 +2,9 @@ body {
   @apply bg-gray-600;
   @apply text-gray-200;
 }
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+}

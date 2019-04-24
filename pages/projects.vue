@@ -1,5 +1,5 @@
 <template lang="pug">
-.container
+.container.bg-gray-900
   h1 Projects
   p Some random project
 </template>
