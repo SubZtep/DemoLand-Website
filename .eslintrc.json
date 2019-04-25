@@ -10,6 +10,7 @@
   },
   "extends": ["@nuxtjs", "plugin:prettier/recommended"],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "spaced-comment": "off"
   }
 }

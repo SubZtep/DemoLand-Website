@@ -1,10 +1,8 @@
 <template lang="pug">
 .wrapper.bg-gray-800
   .container.bg-red-600.text-center
-    p
-      | Preload and redirect to
-      =" "
-      nuxt-link(to="/home") home
+    h1.text-5xl demo land
+    p Welcome to my homepage!
 </template>
 
 <script lang="ts">
@@ -16,9 +14,5 @@ import TransitionMixin from "~/mixins/transition"
     titleTemplate: "demo.land"
   }
 })
-export default class IndexPage extends mixins(TransitionMixin) {
-  mounted() {
-    console.log("LOL", this.$rooter())
-  }
-}
+export default class HomePage extends mixins(TransitionMixin) {}
 </script>

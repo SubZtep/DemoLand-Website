@@ -29,6 +29,11 @@ import { State } from "vuex-class"
 @Component
 export default class AppNavigationComponent extends Vue {
   @State("page", { namespace: "site" }) page: string
+
+  created() {
+    // console.log("ROUTES", this.$router.options.routes)
+    console.log("ROUTES", this.$router.mode)
+  }
 }
 </script>
 

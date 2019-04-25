@@ -1,10 +1,16 @@
 body {
-  @apply bg-gray-600;
+  /*@apply bg-gray-600;*/
+  background: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/200062.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
   @apply text-gray-200;
 }
 
-.container {
+.wrapper {
   width: 100vw;
   height: 100vh;
   max-width: none;
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }

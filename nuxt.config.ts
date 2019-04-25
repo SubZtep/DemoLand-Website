@@ -18,7 +18,7 @@ const config: NuxtConfiguration = {
 
   css: ["~/assets/css/tailwind.css", "~/assets/css/main.css", "~/assets/css/page-transitions.css"],
 
-  plugins: [],
+  plugins: ["~/plugins/rooter"],
 
   modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
 
