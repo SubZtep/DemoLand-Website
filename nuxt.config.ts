@@ -15,12 +15,20 @@ const config: NuxtConfiguration = {
   },
 
   loading: { color: "#fff" },
-
   css: ["~/assets/css/tailwind.css", "~/assets/css/main.css", "~/assets/css/page-transitions.css"],
 
-  plugins: ["~/plugins/rooter"],
+  plugins: ["~/plugins/rooter/plugin"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/axios", "nuxt-fontawesome"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+  fontawesome: {
+    component: "fa",
+    imports: [
+      {
+        set: "@fortawesome/pro-solid-svg-icons",
+        icons: ["faArrowAltUp", "faArrowAltDown", "faArrowAltLeft", "faArrowAltRight"]
+      }
+    ]
+  },
 
   axios: {},
 

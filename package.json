@@ -15,10 +15,12 @@
     "lint:config": "eslint --print-config"
   },
   "dependencies": {
+    "@fortawesome/pro-solid-svg-icons": "^5.8.1",
     "@nuxtjs/axios": "^5.4.1",
     "@nuxtjs/pwa": "^2.6.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.6.2",
+    "nuxt-fontawesome": "^0.4.0",
     "ts-node": "^8.1.0"
   },
   "devDependencies": {

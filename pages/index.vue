@@ -8,17 +8,18 @@
 </template>
 
 <script lang="ts">
-import { Component, mixins } from "nuxt-property-decorator"
-import TransitionMixin from "~/mixins/transition"
+import { Component, Vue } from "nuxt-property-decorator"
 
 @Component({
+  layout: "empty",
   head: {
     titleTemplate: "demo.land"
   }
 })
-export default class IndexPage extends mixins(TransitionMixin) {
+export default class IndexPage extends Vue {
   mounted() {
-    console.log("LOL", this.$rooter())
+    //TODO: preload etc
+    this.$router.push("/home")
   }
 }
 </script>

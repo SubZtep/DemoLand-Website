@@ -1,13 +1,21 @@
 <template lang="pug">
 nav(:class="$style.nav")
-  .text-center
+
+  div(v-for="neighbour in neighbours")
+    NLink(
+      :to="neighbour.path"
+      :class="$style[neighbour.direction]"
+    )
+      fa(:icon="['fas', `arrow-alt-${neighbour.direction}`]")
+
+  //-
     nuxt-link(to="/about") about
     =" - "
     nuxt-link(to="/" exact class="hover:text-blue-200") index
     =" - "
     nuxt-link(to="/projects") projects
 
-  svg(
+  //-svg(
     :class="{ [$style.active]: (page === 'index') }"
     xmlns="http://www.w3.org/2000/svg"
     width="64"
@@ -23,16 +31,20 @@ nav(:class="$style.nav")
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator"
+import { Vue, Component, Watch } from "nuxt-property-decorator"
 import { State } from "vuex-class"
+// eslint-disable-next-line no-unused-vars
+import { Neighbour } from "~/plugins/rooter/plugin"
 
 @Component
 export default class AppNavigationComponent extends Vue {
+  neighbours: Neighbour[] = []
+
   @State("page", { namespace: "site" }) page: string
 
-  created() {
-    // console.log("ROUTES", this.$router.options.routes)
-    console.log("ROUTES", this.$router.mode)
+  @Watch("$route", { immediate: true, deep: true })
+  onUrlChange(newVal: any) {
+    this.neighbours = (this as any).$rooter.getNeighbours()
   }
 }
 </script>
@@ -40,12 +52,33 @@ export default class AppNavigationComponent extends Vue {
 <style lang="scss" module>
 .nav {
   position: absolute;
-  top: 0;
+  right: 25px;
+  bottom: 25px;
   border: 2px solid yellow;
   background-color: black;
-  margin: 0 auto;
   z-index: 1000;
-  left: 45%;
+  display: grid;
+  gap: 15px;
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+}
+
+.up {
+  grid-area: up;
+}
+
+.down {
+  grid-area: down;
+}
+
+.left {
+  grid-area: left;
+}
+
+.right {
+  grid-area: right;
 }
 
 .items {
