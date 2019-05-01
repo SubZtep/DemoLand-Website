@@ -1,12 +1,27 @@
 <template lang="pug">
 nav(:class="$style.nav")
 
-  div(v-for="neighbour in neighbours")
-    NLink(
-      :to="neighbour.path"
-      :class="$style[neighbour.direction]"
-    )
-      fa(:icon="['fas', `arrow-alt-${neighbour.direction}`]")
+  .text-center(:class="$style.up")
+    i.fas.fa-arrow-alt-up(data-fa-transform="grow-32")
+    //-fa(:icon="['fas', 'arrow-alt-up']")
+  div(:class="$style.down")
+    i.fas.fa-arrow-alt-down(data-fa-transform="grow-32")
+    //-fa(:icon="['fas', 'arrow-alt-down']")
+  div(:class="$style.left")
+    i.fas.fa-arrow-alt-left(data-fa-transform="grow-32")
+    //-fa(:icon="['fas', 'arrow-alt-left']")
+  div(:class="$style.right")
+    i.fas.fa-arrow-alt-right(data-fa-transform="grow-32")
+    //-fa(:icon="['fas', 'arrow-alt-right']")
+
+
+  //-div(
+    v-for="neighbour in neighbours"
+    :key="neighbour.path"
+    :class="$style[neighbour.direction]")
+    NLink(:to="neighbour.path")
+      | {{ neighbour }}
+      //-fa(:icon="['fas', `arrow-alt-${neighbour.direction}`]")
 
   //-
     nuxt-link(to="/about") about
@@ -33,6 +48,7 @@ nav(:class="$style.nav")
 <script lang="ts">
 import { Vue, Component, Watch } from "nuxt-property-decorator"
 import { State } from "vuex-class"
+
 // eslint-disable-next-line no-unused-vars
 import { Neighbour } from "~/plugins/rooter/plugin"
 
@@ -51,18 +67,32 @@ export default class AppNavigationComponent extends Vue {
 
 <style lang="scss" module>
 .nav {
+  transform: perspective(400px) rotateX(45deg);
   position: absolute;
+  width: 200px;
+  height: 150px;
   right: 25px;
   bottom: 25px;
   border: 2px solid yellow;
   background-color: black;
   z-index: 1000;
   display: grid;
-  gap: 15px;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     ". up ."
     "left . right"
     ". down .";
+
+  > * {
+    background-color: red;
+    //font-size: 30px;
+  }
+
+  svg {
+    width: 100%;
+  }
 }
 
 .up {
