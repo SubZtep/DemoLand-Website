@@ -1,18 +1,17 @@
 <template lang="pug">
-nav(:class="$style.nav")
+  nav-arrow(:active="true" :class="[$style.arrow, $style.up]")
 
-  .text-center(:class="$style.up")
-    i.fas.fa-arrow-alt-up(data-fa-transform="grow-32")
-    //-fa(:icon="['fas', 'arrow-alt-up']")
-  div(:class="$style.down")
-    i.fas.fa-arrow-alt-down(data-fa-transform="grow-32")
-    //-fa(:icon="['fas', 'arrow-alt-down']")
-  div(:class="$style.left")
-    i.fas.fa-arrow-alt-left(data-fa-transform="grow-32")
-    //-fa(:icon="['fas', 'arrow-alt-left']")
-  div(:class="$style.right")
-    i.fas.fa-arrow-alt-right(data-fa-transform="grow-32")
-    //-fa(:icon="['fas', 'arrow-alt-right']")
+//-  div(:class="[$style.arrow, $style.up]")
+    i.fal.fa-arrow-alt-up
+
+  div(:class="[$style.arrow, $style.down]")
+    i.fas.fa-arrow-alt-down
+
+  div(:class="[$style.arrow, $style.left]")
+    i.fas.fa-arrow-alt-left
+
+  div(:class="[$style.arrow, $style.right]")
+    i.fas.fa-arrow-alt-right
 
 
   //-div(
@@ -50,9 +49,13 @@ import { Vue, Component, Watch } from "nuxt-property-decorator"
 import { State } from "vuex-class"
 
 // eslint-disable-next-line no-unused-vars
-import { Neighbour } from "~/plugins/rooter/plugin"
+import { Neighbour } from "~/plugins/rooter"
 
-@Component
+@Component({
+  components: {
+    AppNavigationComponent: "nav-arrow"
+  }
+})
 export default class AppNavigationComponent extends Vue {
   neighbours: Neighbour[] = []
 
@@ -61,6 +64,7 @@ export default class AppNavigationComponent extends Vue {
   @Watch("$route", { immediate: true, deep: true })
   onUrlChange(newVal: any) {
     this.neighbours = (this as any).$rooter.getNeighbours()
+    console.log("this.neighbours", this.neighbours)
   }
 }
 </script>
@@ -77,7 +81,7 @@ export default class AppNavigationComponent extends Vue {
   background-color: black;
   z-index: 1000;
   display: grid;
-  gap: 1px;
+  gap: 8px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
@@ -89,10 +93,15 @@ export default class AppNavigationComponent extends Vue {
     background-color: red;
     //font-size: 30px;
   }
+}
 
-  svg {
-    width: 100%;
-  }
+.arrow {
+  text-align: center;
+}
+
+.arrow i {
+  font-size: 2rem;
+  filter: drop-shadow(8px 8px 2px black);
 }
 
 .up {

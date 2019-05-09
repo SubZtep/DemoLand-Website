@@ -11,28 +11,21 @@ const config: NuxtConfiguration = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "demo.land website" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        src: "https://pro.fontawesome.com/releases/v5.8.1/js/solid.js",
-        type: "text/javascript",
-        integrity: "sha384-sJjbbGVKgAaulHq0KZK5MsUx9YmPj+4G3oY2vmW12iBNEFkkhObBezK0ZhSXchIs",
-        crossorigin: "anonymous"
-      },
-      {
-        defer: "",
-        src: "https://pro.fontawesome.com/releases/v5.8.1/js/fontawesome.js",
-        type: "text/javascript",
-        integrity: "sha384-w6QYwIdCVqcYkHtaFutVu3VlDeu+pBFvlp7e0/tygMFwnWTl13KuVYfsp0ediPpA",
+        rel: "stylesheet",
+        href: "https://pro.fontawesome.com/releases/v5.8.1/css/all.css",
+        integrity: "sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1",
         crossorigin: "anonymous"
       }
     ]
   },
 
-  loading: { color: "#fff" },
+  loading: false,
   css: ["~/assets/css/tailwind.css", "~/assets/css/main.css", "~/assets/css/page-transitions.css"],
 
-  plugins: ["~/plugins/rooter/plugin"],
+  plugins: ["~/plugins/rooter"],
   modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/axios"],
 
   axios: {},
