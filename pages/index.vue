@@ -19,7 +19,9 @@ import { Component, Vue } from "nuxt-property-decorator"
 export default class IndexPage extends Vue {
   mounted() {
     //TODO: preload etc
-    this.$router.push("/home")
+    setTimeout(() => {
+      this.$router.push("/home")
+    }, 1000)
   }
 }
 </script>

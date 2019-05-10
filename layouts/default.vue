@@ -1,16 +1,16 @@
 <template lang="pug">
 .overflow-hidden
-  AppNavigation
+  HudMap
   nuxt
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator"
-import AppNavigation from "~/components/AppNavigation.vue"
+import HudMap from "~/components/rooter/HudMap.vue"
 
 @Component({
   components: {
-    AppNavigation
+    HudMap
   }
 })
 export default class DefaultLayout extends Vue {}

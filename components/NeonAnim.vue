@@ -3,7 +3,6 @@ svg.neon(:src="`/svg/neon-${cnt}.svg`" :width="w" :height="h")
 </template>
 
 <script lang="ts">
-import { setInterval } from "timers"
 import { Component, Vue, Prop } from "nuxt-property-decorator"
 
 @Component

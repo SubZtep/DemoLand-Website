@@ -11,6 +11,8 @@
   "extends": ["@nuxtjs", "plugin:prettier/recommended"],
   "rules": {
     "no-console": "off",
-    "spaced-comment": "off"
+    "spaced-comment": "off",
+    "no-unused-vars": "warn",
+    "no-multiple-empty-lines": "off"
   }
 }

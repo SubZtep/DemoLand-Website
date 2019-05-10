@@ -5,7 +5,6 @@ svg.ts(:width="w" :height="h")
 <script lang="ts">
 import { setInterval } from "timers"
 import { Component, Vue, Prop } from "nuxt-property-decorator"
-import
 
 @Component
 export default class NeomAnim extends Vue {

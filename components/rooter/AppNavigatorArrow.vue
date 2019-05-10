@@ -1,13 +1,11 @@
 <template lang="pug" functional>
-  div(:class="[$style.arrow, $style[prop.arrow]")
-    i(:class="[prop.active ?, `fa-arrow-alt-${prop.arrow}`]")
+div(:class="[$style.arrow, $style[prop.arrow]")
+  i(:class="[prop.active ?, `fa-arrow-alt-${prop.arrow}`]")
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "nuxt-property-decorator"
-
-// eslint-disable-next-line no-unused-vars
-import { Direction } from "~/plugins/rooter"
+import { Direction } from "~/plugins/rooter" // eslint-disable-line no-unused-vars
 
 @Component
 export default class AppNavigationComponent extends Vue {

@@ -11,24 +11,44 @@ const config: NuxtConfiguration = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "demo.land website" }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      {
-        rel: "stylesheet",
-        href: "https://pro.fontawesome.com/releases/v5.8.1/css/all.css",
-        integrity: "sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1",
-        crossorigin: "anonymous"
-      }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-  loading: false,
-  css: ["~/assets/css/tailwind.css", "~/assets/css/main.css", "~/assets/css/page-transitions.css"],
+  //loading: false,
 
-  plugins: ["~/plugins/rooter"],
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/axios"],
+  css: ["~/assets/css/tailwind.css", "~/assets/css/page-transitions.css"],
 
-  axios: {},
+  plugins: [
+    "~/plugins/rooter"
+    //{ src: "~/plugins/rooter", ssr: false }
+    //{ src: "~/plugins/d3tree", ssr: false }
+  ],
+
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
+    "@nuxtjs/axios",
+    [
+      "nuxt-fontawesome",
+      {
+        component: "fa",
+        imports: [
+          //import whole set
+          {
+            set: "@fortawesome/pro-solid-svg-icons",
+            icons: ["fas"]
+          },
+          //import 2 icons from set
+          // please note this is PRO set in this example,
+          // you must have it in your node_modules to actually import
+          {
+            set: "@fortawesome/pro-regular-svg-icons",
+            icons: ["faAdjust", "faArchive"]
+          }
+        ]
+      }
+    ]
+  ],
 
   router: {
     middleware: "pages"
