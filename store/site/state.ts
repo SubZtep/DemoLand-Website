@@ -1,7 +1,7 @@
-export interface State {
+export interface SiteState {
   page: string
 }
 
-export default (): State => ({
+export default (): SiteState => ({
   page: "index"
 })

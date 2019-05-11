@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-export default function(context): void {
-  context.store.commit("site/updatePage", context.route.name)
+export default function({ store, route }): void {
+  store.dispatch("site/setPage", route.name)
 }

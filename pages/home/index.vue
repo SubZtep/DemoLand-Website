@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { Component, mixins, State } from "nuxt-property-decorator"
+import { Component, mixins } from "nuxt-property-decorator"
 import TransitionMixin from "~/mixins/transition"
 import NeonAnim from "~/components/NeonAnim.vue"
 
@@ -32,7 +32,7 @@ export default class HomePage extends mixins(TransitionMixin) {
   neon = false
   sitemap: any = null
 
-  @State("page", { namespace: "site" }) page: string
+  //@State("page", { namespace: "site" }) page: string
 
   created() {
     //console.log("XXX", this.$rooter.getSitemap())

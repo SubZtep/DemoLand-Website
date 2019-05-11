@@ -1,8 +1,7 @@
-// eslint-disable-next-line no-unused-vars
-import { State } from "./state"
+import { SiteState } from "./state" // eslint-disable-line no-unused-vars
 
 export default {
-  updatePage(state: State, page: string): void {
+  SET_PAGE(state: SiteState, page: string): void {
     state.page = page
   }
 }

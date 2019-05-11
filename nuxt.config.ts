@@ -1,11 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-import NuxtConfiguration from "@nuxt/config"
-
-const config: NuxtConfiguration = {
+module.exports = {
   mode: "universal",
 
   head: {
-    titleTemplate: "%s - d҉e҉m҉o҉.҉l҉a҉n҉d҉",
+    titleTemplate: "%s ·d҉e҉m҉o҉.҉l҉a҉n҉d҉",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -69,5 +66,3 @@ const config: NuxtConfiguration = {
     }
   }
 }
-
-export default config
