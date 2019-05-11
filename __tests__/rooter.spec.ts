@@ -1,6 +1,6 @@
-import { Location } from "vue-router"
+import { Location } from "vue-router" // eslint-disable-line no-unused-vars
 import {
-  Node,
+  Node, // eslint-disable-line no-unused-vars
   getSitemap,
   countSubString,
   getNodesFromLocations,

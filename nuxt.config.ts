@@ -5,7 +5,7 @@ const config: NuxtConfiguration = {
   mode: "universal",
 
   head: {
-    titleTemplate: "%s - demo.land",
+    titleTemplate: "%s - d҉e҉m҉o҉.҉l҉a҉n҉d҉",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -37,6 +37,10 @@ const config: NuxtConfiguration = {
           {
             set: "@fortawesome/pro-solid-svg-icons",
             icons: ["fas"]
+          },
+          {
+            set: "@fortawesome/free-brands-svg-icons",
+            icons: ["fab"]
           },
           //import 2 icons from set
           // please note this is PRO set in this example,

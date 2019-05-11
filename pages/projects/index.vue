@@ -1,8 +1,11 @@
 <template lang="pug">
-.wrapper.bg-gray-700
-  .container.bg-red-600
-    h1 Projects
-    ul
+.wrapper.bg-teal-900
+  .container.text-center
+    h1 Projects 🍩🍦
+
+    p Recent things.
+
+    ul.text-sm.text-red-300.text-left.mx-auto(class="w-1/4")
       li GIF Animation Preview
       li The Hunger Maims
       li Road Pump

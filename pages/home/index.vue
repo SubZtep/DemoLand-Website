@@ -3,6 +3,11 @@
   .z-30.container.bg-red-600.text-center
     h1.text-5xl demo land
     p Welcome to my homepage!
+    p Under Construction for real, as you can see almost empty yet.
+    p
+      | Check
+      =" "
+      a(href="/blog") the blog
     button.border-8.border-green-400(@click="neon = !neon") Toggle SVG Waves
 
     //-div(v-if="sitemap")
@@ -15,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { Component, mixins } from "nuxt-property-decorator"
+import { Component, mixins, State } from "nuxt-property-decorator"
 import TransitionMixin from "~/mixins/transition"
 import NeonAnim from "~/components/NeonAnim.vue"
 
@@ -26,6 +31,8 @@ import NeonAnim from "~/components/NeonAnim.vue"
 export default class HomePage extends mixins(TransitionMixin) {
   neon = false
   sitemap: any = null
+
+  @State("page", { namespace: "site" }) page: string
 
   created() {
     //console.log("XXX", this.$rooter.getSitemap())

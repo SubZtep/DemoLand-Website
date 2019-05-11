@@ -116,6 +116,7 @@ interface RooterInstance {
   getRoutes(): Location[]
   getSitemap(rebuild?: boolean): Node
   getNeighbours(): Neighbour[]
+  getDirection(fromPath: string | undefined, toPath: string | undefined): Direction | undefined
 }
 
 declare module "@nuxt/vue-app" {
@@ -199,6 +200,12 @@ export default (ctx, inject) => {
         })
       }
       return neighbours
+    },
+
+    getDirection(fromPath: string | undefined, toPath: string | undefined): Direction | undefined {
+      //if (typeof fromPath === "undefined" || typeof toPath === "undefined") return undefined
+
+      return undefined
     }
   })
 }

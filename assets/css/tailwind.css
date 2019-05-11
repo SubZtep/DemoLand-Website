@@ -7,7 +7,7 @@ body {
   background: url(https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/200062.jpg)
     no-repeat center center fixed;
   background-size: cover;
-  @apply text-gray-200;
+  @apply text-gray-200 text-xl;
 }
 
 .wrapper {
@@ -17,4 +17,19 @@ body {
   display: flex;
   align-items: center;
   justify-items: center;
+}
+
+.icon {
+  width: 128px;
+  height: 128px;
+  margin: 2rem auto;
+}
+
+h1 {
+  @apply text-yellow-300 text-6xl;
+  -webkit-text-stroke: 2.5px yellowgreen;
+}
+
+a {
+  text-decoration: underline;
 }
