@@ -51,7 +51,7 @@ const config: NuxtConfiguration = {
   ],
 
   router: {
-    middleware: "pages"
+    middleware: ["pages", "rooter"]
   },
 
   build: {

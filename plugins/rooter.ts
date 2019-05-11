@@ -1,12 +1,11 @@
-import { Location } from "vue-router"
-import { Context } from "@nuxt/vue-app"
+import { Location } from "vue-router" // eslint-disable-line no-unused-vars
 
 /** Value up, down, left or right only */
 export enum Direction {
-  Up = "up",
-  Down = "down",
-  Left = "left",
-  Right = "right"
+  Up = "up", // eslint-disable-line no-unused-vars
+  Down = "down", // eslint-disable-line no-unused-vars
+  Left = "left", // eslint-disable-line no-unused-vars
+  Right = "right" // eslint-disable-line no-unused-vars
 }
 
 /** Page to navigate */
@@ -119,10 +118,19 @@ interface RooterInstance {
   getNeighbours(): Neighbour[]
 }
 
-export default (ctx, inject) => {
-  // Generate sitemap first
-  getSitemap(getNodesFromLocations(ctx.app.router.options.routes))
+declare module "@nuxt/vue-app" {
+  interface Context {
+    $rooter: RooterInstance
+  }
+}
 
+declare module "vue/types/vue" {
+  interface Vue {
+    $rooter: RooterInstance
+  }
+}
+
+export default (ctx, inject) => {
   const routes: Location[] = ctx.app.router.options.routes //TODO: order it
   const nodes: Node[] = getNodesFromLocations(routes)
 
@@ -193,16 +201,4 @@ export default (ctx, inject) => {
       return neighbours
     }
   })
-}
-
-declare module "@nuxt/vue-app" {
-  interface Context {
-    $rooter: RooterInstance
-  }
-}
-
-declare module "vue/types/vue" {
-  interface Vue {
-    $rooter: RooterInstance
-  }
 }
