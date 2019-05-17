@@ -22,14 +22,12 @@ nav(:class="$style.nav")
       v-else
       :icon="['fas', 'arrow-alt-left']")
 
-
   div(:class="$style.right")
     nuxt-link(v-if="getRightPath" :to="getRightPath" ref="right")
       fa.fa-3x(:icon="['fas', 'arrow-alt-right']")
     fa.fa-3x.opacity-50(
       v-else
       :icon="['fas', 'arrow-alt-right']")
-
 
 </template>
 
@@ -105,7 +103,8 @@ export default class HudMapCompComponent extends Vue {
 
 <style lang="scss" module>
 .nav {
-  transform: perspective(400px) rotateX(45deg);
+  //transform: perspective(400px) rotateX(45deg);
+  transform: perspective(530px) rotateX(45deg);
   position: absolute;
   width: 200px;
   height: 150px;
