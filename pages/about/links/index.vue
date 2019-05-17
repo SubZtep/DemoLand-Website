@@ -7,7 +7,7 @@
 
     .mt-12(:class="$style.links")
 
-      a.text-right(href="https://github.com/SubZtep" target="_blank")
+      a(href="https://github.com/SubZtep" target="_blank")
         fa(:icon="['fab', 'github']")
         span GitHub
 
@@ -15,11 +15,11 @@
         fa(:icon="['fab', 'linkedin']")
         span LinkedIn
 
-      a.text-left(href="https://connect.unity.com/u/583ad92d32b306002a9e7ab2" target="_blank")
-        fa(:icon="['fab', 'connectdevelop']")
+      a(href="https://connect.unity.com/u/583ad92d32b306002a9e7ab2" target="_blank")
+        fa(:icon="['fal', 'cube']")
         span UnityConnect
 
-      a.text-right(href="https://twitter.com/subztep" target="_blank")
+      a(href="https://twitter.com/subztep" target="_blank")
         fa(:icon="['fab', 'twitter']")
         span Twitter
 
@@ -27,9 +27,35 @@
         fa(:icon="['fab', 'instagram']")
         span Instagram
 
-      a.text-left(href="https://www.facebook.com/subztep" target="_blank")
+      a(href="https://www.facebook.com/subztep" target="_blank")
         fa(:icon="['fab', 'facebook-f']")
         span Facebook
+
+      a(href="https://www.twitch.tv/subztep" target="_blank")
+        fa(:icon="['fab', 'twitch']")
+        span #Twitch
+
+      a(href="https://subztep.itch.io/" target="_blank")
+        fa(:icon="['fab', 'itch-io']")
+        span #ItchIo
+
+      a(href="https://www.youtube.com/channel/UCy1JFooPXHose1GKoPZVxMg" target="_blank")
+        fa(:icon="['fab', 'youtube']")
+        span #YouTube
+
+      a(href="https://www.last.fm/user/hybridoma" target="_blank")
+        fa(:icon="['fab', 'lastfm']")
+        span #LastFm
+
+      a(href="https://soundcloud.com/subztep" target="_blank")
+        fa(:icon="['fab', 'soundcloud']")
+        span #SoundCloud
+
+      a(href="https://www.mixcloud.com/subztep/" target="_blank")
+        fa(:icon="['fab', 'mixcloud']")
+        span #MixCloud
+
+
 
 
 </template>
@@ -48,11 +74,14 @@ export default class AboutLinksPage extends mixins(TransitionMixin) {}
 
 <style lang="scss" module>
 .links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
 
   a {
+    text-align: center;
+    display: inline-block;
+    width: 300px;
+    margin: 0.5rem 0;
     svg {
       z-index: 90;
       color: yellow;

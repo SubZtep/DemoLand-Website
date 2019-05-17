@@ -30,21 +30,33 @@ module.exports = {
       {
         component: "fa",
         imports: [
-          //import whole set
           {
             set: "@fortawesome/pro-solid-svg-icons",
-            icons: ["fas"]
+            icons: ["faArrowAltUp", "faArrowAltDown", "faArrowAltLeft", "faArrowAltRight"]
           },
-          {
-            set: "@fortawesome/free-brands-svg-icons",
-            icons: ["fab"]
-          },
-          //import 2 icons from set
-          // please note this is PRO set in this example,
-          // you must have it in your node_modules to actually import
           {
             set: "@fortawesome/pro-regular-svg-icons",
             icons: ["faAdjust", "faArchive"]
+          },
+          {
+            set: "@fortawesome/pro-light-svg-icons",
+            icons: ["faCube"]
+          },
+          {
+            set: "@fortawesome/free-brands-svg-icons",
+            icons: [
+              "faGithub",
+              "faLinkedin",
+              "faTwitter",
+              "faInstagram",
+              "faFacebookF",
+              "faTwitch",
+              "faItchIo",
+              "faYoutube",
+              "faLastfm",
+              "faSoundcloud",
+              "faMixcloud"
+            ]
           }
         ]
       }

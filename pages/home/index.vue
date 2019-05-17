@@ -4,11 +4,11 @@
     h1.text-5xl demo land
     p Welcome to my homepage!
     p Under Construction for real, as you can see almost empty yet.
-    p
+    p.inline-block.border-8.border-green-400
       | Check
       =" "
       a(href="/blog") the blog
-    button.border-8.border-green-400(@click="neon = !neon") Toggle SVG Waves
+    //-button.border-8.border-green-400(@click="neon = !neon") Toggle SVG Waves
 
     //-div(v-if="sitemap")
       Tree(

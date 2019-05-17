@@ -1,28 +1,28 @@
 <template lang="pug">
 nav(:class="$style.nav")
 
-  .text-center(:class="$style.up")
+  div(:class="[$style.up, getUpPath ? 'bg-green-700' : 'bg-red-900']")
     nuxt-link(v-if="getUpPath" :to="getUpPath" ref="up")
       fa.fa-3x(:icon="['fas', 'arrow-alt-up']")
     fa.fa-3x.opacity-50(
       v-else
       :icon="['fas', 'arrow-alt-up']")
 
-  div(:class="$style.down")
+  div(:class="[$style.down, getDownPath ? 'bg-green-700' : 'bg-red-900']")
     nuxt-link(v-if="getDownPath" :to="getDownPath" ref="down")
       fa.fa-3x( :icon="['fas', 'arrow-alt-down']")
     fa.fa-3x.opacity-50(
       v-else
       :icon="['fas', 'arrow-alt-down']")
 
-  div(:class="$style.left")
+  div(:class="[$style.left, getLeftPath ? 'bg-green-700' : 'bg-red-900']")
     nuxt-link(v-if="getLeftPath" :to="getLeftPath" ref="left")
       fa.fa-3x(:icon="['fas', 'arrow-alt-left']")
     fa.fa-3x.opacity-50(
       v-else
       :icon="['fas', 'arrow-alt-left']")
 
-  div(:class="$style.right")
+  div(:class="[$style.right, getRightPath ? 'bg-green-700' : 'bg-red-900']")
     nuxt-link(v-if="getRightPath" :to="getRightPath" ref="right")
       fa.fa-3x(:icon="['fas', 'arrow-alt-right']")
     fa.fa-3x.opacity-50(
@@ -104,10 +104,10 @@ export default class HudMapCompComponent extends Vue {
 <style lang="scss" module>
 .nav {
   //transform: perspective(400px) rotateX(45deg);
-  transform: perspective(530px) rotateX(45deg);
+  //transform: perspective(530px) rotateX(45deg);
   position: absolute;
-  width: 200px;
-  height: 150px;
+  // width: 200px;
+  // height: 150px;
   right: 25px;
   bottom: 25px;
   border: 2px solid yellow;
@@ -122,13 +122,13 @@ export default class HudMapCompComponent extends Vue {
     "left . right"
     ". down .";
 
-  > * {
+  /* > * {
     background-color: red;
-  }
+  } */
 
-  svg {
+  /* svg {
     width: 100%;
-  }
+  } */
 }
 
 .up {
@@ -151,7 +151,7 @@ export default class HudMapCompComponent extends Vue {
   transition: all 1s ease;
 }
 
-.active {
+/* .active {
   fill: yellow;
   .rect {
     transform: translate3d(32px, 32px, 0) scale(0);
@@ -159,5 +159,5 @@ export default class HudMapCompComponent extends Vue {
   .circle {
     transform: translate3d(-32px, -32px, 0) scale(1.5);
   }
-}
+} */
 </style>
