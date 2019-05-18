@@ -16,9 +16,8 @@ module.exports = {
   css: ["~/assets/css/tailwind.css", "~/assets/css/page-transitions.css"],
 
   plugins: [
-    "~/plugins/rooter"
+    "~/plugins/rooter/plugin"
     //{ src: "~/plugins/rooter", ssr: false }
-    //{ src: "~/plugins/d3tree", ssr: false }
   ],
 
   modules: [

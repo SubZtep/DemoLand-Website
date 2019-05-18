@@ -9,9 +9,7 @@ import { Vue, Component } from "nuxt-property-decorator"
 import HudMap from "~/components/rooter/HudMap.vue"
 
 @Component({
-  components: {
-    HudMap
-  }
+  components: { HudMap }
 })
 export default class DefaultLayout extends Vue {}
 </script>

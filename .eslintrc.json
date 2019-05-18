@@ -10,9 +10,9 @@
   },
   "extends": ["@nuxtjs", "plugin:prettier/recommended"],
   "rules": {
+    "no-unused-vars": "off",
     "no-console": "off",
     "spaced-comment": "off",
-    "no-unused-vars": "warn",
     "no-multiple-empty-lines": "off"
   }
 }

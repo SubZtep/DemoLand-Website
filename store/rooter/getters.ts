@@ -1,7 +1,7 @@
-import { RooterState } from "./state" // eslint-disable-line no-unused-vars
+import { RooterState } from "./state"
 
 export default {
   hasSitemap(state: RooterState) {
-    return typeof state.sitemap !== "undefined"
+    return state.sitemap !== undefined
   }
 }

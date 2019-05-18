@@ -1,8 +1,8 @@
-import { Node } from "~/plugins/rooter" // eslint-disable-line no-unused-vars
-import { RooterState } from "./state" // eslint-disable-line no-unused-vars
+import { Page } from "~/plugins/rooter/types"
+import { RooterState } from "./state"
 
 export default {
-  SET_SITEMAP(state: RooterState, sitemap: Node): void {
+  SET_SITEMAP(state: RooterState, sitemap: Page): void {
     state.sitemap = sitemap
   },
 

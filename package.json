@@ -5,7 +5,8 @@
   "author": "Andras Serfozo",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
+    "dev": "nuxt",
+    "dev:express": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
     "build": "nuxt build",
     "start": "nuxt start",
     "start:express": "cross-env NODE_ENV=production node server/index.ts",
@@ -25,8 +26,7 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.7.1",
     "nuxt-fontawesome": "^0.4.0",
-    "ts-node": "^8.1.0",
-    "vued3tree": "^3.7.1"
+    "ts-node": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

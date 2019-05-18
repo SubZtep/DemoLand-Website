@@ -1,6 +1,6 @@
-import { Node } from "~/plugins/rooter" // eslint-disable-line no-unused-vars
+import { Page } from "~/plugins/rooter/types"
 export interface RooterState {
-  sitemap: Node | undefined
+  sitemap: Page | undefined
   upPath: string
   downPath: string
   leftPath: string

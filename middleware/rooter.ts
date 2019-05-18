@@ -1,7 +1,7 @@
-import { Direction, Node } from "~/plugins/rooter" // eslint-disable-line no-unused-vars
+import { Direction, Page } from "~/plugins/rooter/types" // eslint-disable-line no-unused-vars
 
 export default function({ app, store }): void {
-  let tmp: Node | undefined
+  let tmp: Page | undefined
   tmp = app.$rooter.getNeighbour(Direction.Up)
   store.dispatch("rooter/setUpPath", tmp ? tmp.path : "")
 

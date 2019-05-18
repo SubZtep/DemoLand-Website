@@ -33,13 +33,13 @@ nav(:class="$style.nav")
 
 <script lang="ts">
 import { Vue, Component, Watch, State, Getter, Action } from "nuxt-property-decorator"
-import { Node, Direction } from "~/plugins/rooter" // eslint-disable-line no-unused-vars
+import { Page, Direction } from "~/plugins/rooter/types"
 
 enum KeyCode {
-  Up = 38, // eslint-disable-line no-unused-vars
-  Down = 40, // eslint-disable-line no-unused-vars
-  Left = 37, // eslint-disable-line no-unused-vars
-  Right = 39 // eslint-disable-line no-unused-vars
+  Up = 38,
+  Down = 40,
+  Left = 37,
+  Right = 39
 }
 
 @Component
@@ -61,15 +61,15 @@ export default class HudMapCompComponent extends Vue {
    * Navigate to the selected page
    */
   navTo(way: Direction) {
-    const n = this.$rooter.getNeighbour(way)
-    if (n) {
-      this.$router.push(n.path)
+    const p = this.$rooter.getNeighbour(way)
+    if (p) {
+      this.$router.push(p.path)
     }
   }
 
   created() {
     if (!this.hasSitemap) {
-      const sitemap: Node = this.$rooter.getSitemap()
+      const sitemap: Page = this.$rooter.getSitemap()
       this.setSitemap(sitemap)
     }
 
@@ -97,6 +97,9 @@ export default class HudMapCompComponent extends Vue {
         }
       })
     }
+
+    // Touch event:
+    // If the user try to slide warn to push the buttons it's oldskool website :)
   }
 }
 </script>

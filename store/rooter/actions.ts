@@ -1,7 +1,7 @@
-import { Node } from "~/plugins/rooter" // eslint-disable-line no-unused-vars
+import { Page } from "~/plugins/rooter/types"
 
 export default {
-  setSitemap({ commit }, sitemap: Node) {
+  setSitemap({ commit }, sitemap: Page) {
     commit("SET_SITEMAP", sitemap)
   },
 

@@ -4,6 +4,7 @@
     h1.text-5xl demo land
     p Welcome to my homepage!
     p Under Construction for real, as you can see almost empty yet.
+    nuxt-link(to="/about/links") Links
     p.inline-block.border-8.border-green-400
       | Check
       =" "
