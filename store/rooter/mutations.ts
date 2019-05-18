@@ -1,11 +1,6 @@
-import { Page } from "~/plugins/rooter/types"
 import { RooterState } from "./state"
 
 export default {
-  SET_SITEMAP(state: RooterState, sitemap: Page): void {
-    state.sitemap = sitemap
-  },
-
   SET_UP_PATH(state: RooterState, path: string): void {
     state.upPath = path
   },

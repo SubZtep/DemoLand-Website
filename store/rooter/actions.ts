@@ -1,10 +1,4 @@
-import { Page } from "~/plugins/rooter/types"
-
 export default {
-  setSitemap({ commit }, sitemap: Page) {
-    commit("SET_SITEMAP", sitemap)
-  },
-
   setUpPath({ commit }, path: string) {
     commit("SET_UP_PATH", path)
   },

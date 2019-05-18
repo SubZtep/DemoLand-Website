@@ -49,30 +49,14 @@ export default class HudMapCompComponent extends Vue {
   @State("downPath", { namespace: "rooter" }) getDownPath: string
   @State("leftPath", { namespace: "rooter" }) getLeftPath: string
   @State("rightPath", { namespace: "rooter" }) getRightPath: string
-  @Getter("hasSitemap", { namespace: "rooter" }) hasSitemap: boolean
-  @Action("setSitemap", { namespace: "rooter" }) setSitemap: Function
 
   @Watch("$route", { immediate: true, deep: true })
   onUrlChange(newVal: any) {
-    this.$forceUpdate()
-  }
-
-  /**
-   * Navigate to the selected page
-   */
-  navTo(way: Direction) {
-    const p = this.$rooter.getNeighbour(way)
-    if (p) {
-      this.$router.push(p.path)
-    }
+    //this.$forceUpdate()
+    //console.log("THE SITEMAP", this.$rooter.getSitemap())
   }
 
   created() {
-    if (!this.hasSitemap) {
-      const sitemap: Page = this.$rooter.getSitemap()
-      this.setSitemap(sitemap)
-    }
-
     // Keyboard event
     if (typeof document !== "undefined") {
       document.addEventListener("keyup", e => {

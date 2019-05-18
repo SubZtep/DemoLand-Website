@@ -31,17 +31,5 @@ import NeonAnim from "~/components/NeonAnim.vue"
 })
 export default class HomePage extends mixins(TransitionMixin) {
   neon = false
-  sitemap: any = null
-
-  //@State("page", { namespace: "site" }) page: string
-
-  created() {
-    //console.log("XXX", this.$rooter.getSitemap())
-    // if (typeof window !== "undefined")
-    //   setTimeout(() => {
-    //     this.sitemap = this.$rooter.getSitemap()
-    //     console.log(this.sitemap)
-    //   }, 2000)
-  }
 }
 </script>

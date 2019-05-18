@@ -1,9 +1,9 @@
 /** Value up, down, left or right only */
 export enum Direction {
-  Up = "up", // eslint-disable-line no-unused-vars
-  Down = "down", // eslint-disable-line no-unused-vars
-  Left = "left", // eslint-disable-line no-unused-vars
-  Right = "right" // eslint-disable-line no-unused-vars
+  Up = "up",
+  Down = "down",
+  Left = "left",
+  Right = "right"
 }
 
 /** Page to navigate */
@@ -20,7 +20,7 @@ export interface Page /*  extends Location  */ {
 }
 interface RooterInstance {
   getNeighbour(way: Direction): Page | undefined
-  getSitemap(rebuild?: boolean): Page
+  getSitemap(): Page
 }
 
 declare module "@nuxt/vue-app" {

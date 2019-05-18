@@ -1,4 +1,4 @@
-import { SiteState } from "./state" // eslint-disable-line no-unused-vars
+import { SiteState } from "./state"
 
 export default {
   SET_PAGE(state: SiteState, page: string): void {
