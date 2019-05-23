@@ -1,6 +1,8 @@
 import { Direction, Page } from "~/plugins/rooter/types"
 
 export default function ({ app, store }): void {
+  // Set the arrows target or no arrow
+
   let tmp: Page | undefined
   tmp = app.$rooter.getNeighbour(Direction.Up)
   store.dispatch("rooter/setUpPath", tmp ? tmp.path : "")
